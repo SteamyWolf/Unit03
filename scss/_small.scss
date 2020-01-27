@@ -1,0 +1,111 @@
+/* Prevent adjustments of font size after orientation changes in IE on Windows Phone and in iOS.  */
+html {-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%;}
+
+/*----------- apply a natural box layout model to all elements --------------*/
+* { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }
+
+
+/*----------- BODY --------------*/
+body {
+    font-size: 16px;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+
+/*----------- HEADER --------------*/
+header {
+    padding: .5rem 2%;
+    background-color: white;
+    display: grid;
+    grid-template-columns: 130px auto;
+    color: $menuColor;
+}
+header h1 {
+    margin: 0;
+    margin-top: 1.8rem;
+    margin-left: 1rem;
+    font-size: 1.45rem;
+}
+header h2 {
+    margin: 0; 
+    font-weight: normal;
+    margin-left: 1rem;
+    font-size: 1.1rem;
+}
+
+
+/*----------- NAVIGATION --------------*/
+nav {
+    background-color: $menuColor;
+}
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+nav ul li {
+    float: left;
+    width: 25%;
+}
+nav ul li a {
+    display: block;
+    background-color: darken($menuColor, 10%);
+    color: #eee;
+    border-left: 1px solid #777;
+    padding: .5rem 0;
+    text-decoration: none;
+    font-size: .9rem;
+    text-align: center;
+}
+nav ul li:first-child a {border-left: none;}
+
+nav ul li a:hover {
+    background-color: lighten($menuColor, 20%);
+    color: #333;
+}
+nav ul li.active a {
+    background-color: darken($menuColor, 20%);
+    color: #fff;
+}
+/*----------- MAIN --------------*/
+main {
+    padding: 0 2%;
+    min-height: 10rem;
+}
+
+div.gallery {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+div.gallery figure {
+    flex-basis: 96%;
+    margin: 1rem 2%;
+}
+
+div.gallery figure img {
+    width: 100%;
+}
+
+div.gallery figure figcaption {
+    text-align: center;
+    color: $menuColor;
+}
+
+
+/*----------- FOOTER --------------*/
+footer {
+    background-color: $menuColor;
+    padding: .5rem 2%;
+    text-align: center;
+    color: white;
+}
+
+
+
+/*----- Clearfix: Force an Element not to collapse -----*/
+.clearfix:after {
+  content: "";
+  display: table;
+  clear: both;
+}
